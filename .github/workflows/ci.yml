@@ -2,13 +2,13 @@ name: CI
 on:
   workflow_call:
    inputs:
-      environm:
+      token:
         required: true
         type: string
-      name_host:
+      pull-request-number:
         required: true
         type: string
-    
+   
   pull_request:
     branches: [main]
     paths-ignore:
