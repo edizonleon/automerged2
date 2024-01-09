@@ -1,10 +1,14 @@
 name: CI
 on:
-  push:
-    branches: [ST]
-    paths-ignore:
-      - 'README.md'
-      - 'docs/**'
+  workflow_call:
+   inputs:
+      environm:
+        required: true
+        type: string
+      name_host:
+        required: true
+        type: string
+    
   pull_request:
     branches: [main]
     paths-ignore:
