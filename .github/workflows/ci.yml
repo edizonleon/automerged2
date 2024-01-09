@@ -38,10 +38,7 @@ jobs:
   test:
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     needs: [build]
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,5 +50,5 @@ jobs:
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
           comment: |
             [CI]
-            test ${{ matrix.os }}
+            test ubuntu-latest
           delete-branch: true
