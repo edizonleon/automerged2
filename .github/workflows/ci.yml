@@ -8,6 +8,12 @@ on:
       pull-request-number:
         required: true
         type: string
+      comment :
+        required: true
+        type: string
+      delete-branch:
+        required: true
+        type: string
    
   pull_request:
     branches: [main]
